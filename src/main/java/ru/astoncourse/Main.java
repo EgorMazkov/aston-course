@@ -18,32 +18,18 @@ import static ru.astoncourse.tasks.Task_14.createArrayWithValue;
 public class Main {
     public static void main(String[] args) {
         printThreeWords(); // Task_1
-        System.out.println();
         checkSumSing(); // Task_2
-        System.out.println();
         printColor(); // Task_3
-        System.out.println();
         compareNumbers(); // Task_4
-        System.out.println();
         isSumInRange(); // Task_5
-        System.out.println();
         printNumberSign(); // Task_6
-        System.out.println();
         printBooleanNumberSign(); // Task_7
-        System.out.println();
         printStringMultipleTimes(); // Task_8
-        System.out.println();
         isLeapYear(); // Task_9
-        System.out.println();
         invertBinaryArray(); // Task_10
-        System.out.println();
         fillArrayWithSequence(); // Task_11
-        System.out.println();
         updateValuesLessThanSix(); // Task_12
-        System.out.println();
         fillMainDiagonalWithOnes(); // Task_13
-        System.out.println();
         createArrayWithValue(); // Task_14
-        System.out.println();
     }
 }

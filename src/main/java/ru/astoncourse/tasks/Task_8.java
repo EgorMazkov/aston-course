@@ -15,5 +15,6 @@ public class Task_8 {
         for (int i = 0; i < counter; i++) {
             System.out.println(line);
         }
+        System.out.println();
     }
 }

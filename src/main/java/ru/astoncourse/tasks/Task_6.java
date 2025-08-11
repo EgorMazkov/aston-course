@@ -7,9 +7,10 @@ public class Task_6 {
         System.out.print("Введите целое число:");
         int num = readNumbersFromConsole();
         if (num >= 0) {
-            System.out.println("Положительное");
+            System.out.println("Положительное\n");
         } else {
-            System.out.println("Отрицательное");
+            System.out.println("Отрицательно\n");
         }
+
     }
 }

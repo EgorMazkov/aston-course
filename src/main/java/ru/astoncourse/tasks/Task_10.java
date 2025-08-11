@@ -13,6 +13,6 @@ public class Task_10 {
                 mass[i] = 0;
             }
         }
-        System.out.println(Arrays.toString(mass));
+        System.out.println(Arrays.toString(mass) + '\n');
     }
 }

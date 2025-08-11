@@ -12,7 +12,6 @@ public class Task_5 {
         b = readNumbersFromConsole();
 
         System.out.println(a + b >= 10 && a + b <= 20);
+        System.out.println();
     }
-
-
 }

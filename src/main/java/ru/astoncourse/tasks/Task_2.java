@@ -5,9 +5,9 @@ public class Task_2 {
         int a = 1206;
         int b = 123;
         if (a + b >= 0) {
-            System.out.println("Сумма положительная");
+            System.out.println("Сумма положительная\n");
         }  else {
-            System.out.println("Сумма отрицательная");
+            System.out.println("Сумма отрицательная\n");
         }
     }
 }

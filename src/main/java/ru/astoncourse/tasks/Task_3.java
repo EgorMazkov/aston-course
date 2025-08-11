@@ -10,5 +10,6 @@ public class Task_3 {
         } else {
             System.out.println("Зеленый");
         }
+        System.out.println();
     }
 }

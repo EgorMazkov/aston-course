@@ -5,9 +5,9 @@ public class Task_4 {
         int a = 300;
         int b = 20;
         if (a >= b) {
-            System.out.println("a >= b");
+            System.out.println("a >= b\n");
         } else {
-            System.out.println("a < b");
+            System.out.println("a < b\n");
         }
     }
 }

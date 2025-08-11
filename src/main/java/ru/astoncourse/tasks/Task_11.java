@@ -9,6 +9,6 @@ public class Task_11 {
             mass[i] = i+1;
 
         }
-        System.out.println(Arrays.toString(mass));
+        System.out.println(Arrays.toString(mass) + '\n');
     }
 }

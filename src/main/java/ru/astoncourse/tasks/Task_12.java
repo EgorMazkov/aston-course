@@ -11,6 +11,6 @@ public class Task_12 {
                 mass[i] *= 2;
             }
         }
-        System.out.println(Arrays.toString(mass));
+        System.out.println(Arrays.toString(mass) + '\n');
     }
 }

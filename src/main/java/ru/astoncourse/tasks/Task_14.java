@@ -14,5 +14,6 @@ public class Task_14 {
             array[i] = initialValue;
             System.out.print(array[i] + " ");
         }
+        System.out.println();
     }
 }

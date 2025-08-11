@@ -7,5 +7,6 @@ public class Task_7 {
         System.out.print("Введите целое число:");
         int num = readNumbersFromConsole();
         System.out.println(num >= 0);
+        System.out.println();
     }
 }
