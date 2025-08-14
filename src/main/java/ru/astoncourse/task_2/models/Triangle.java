@@ -30,17 +30,7 @@ public class Triangle implements Shape {
         return Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
     }
 
-    @Override
-    public String getBorderColor() {
-        return borderColor;
-    }
-
-    @Override
-    public String getFillColor() {
-        return fillColor;
-    }
-
     public void info() {
-        System.out.println(getPerimeter() + ", " + getArea() + ", " + getBorderColor() + ", " + getFillColor());
+        System.out.println(getPerimeter() + ", " + getArea() + ", " + fillColor + ", " + borderColor);
     }
 }

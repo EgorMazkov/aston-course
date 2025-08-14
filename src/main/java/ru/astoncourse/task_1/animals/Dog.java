@@ -1,8 +1,6 @@
 package ru.astoncourse.task_1.animals;
 
 public class Dog  extends Animal {
-    private int maxRun = 500;
-    private int maxSwim = 10;
 
     public Dog(String name) {
         this.name = name;
@@ -11,8 +9,8 @@ public class Dog  extends Animal {
 
     @Override
     public void run(int length) {
-        if (length > maxRun) {
-            System.out.println(name + " не может пробежать больше " + maxRun + "м.");
+        if (length > 500) {
+            System.out.println(name + " не может пробежать больше " + 500 + "м.");
         } else {
             super.run(length);
         }
@@ -20,8 +18,8 @@ public class Dog  extends Animal {
 
     @Override
     public void swim(int length) {
-        if (length > maxSwim) {
-            System.out.println(name + " не может проплыть больше " + maxSwim + "м.");
+        if (length > 10) {
+            System.out.println(name + " не может проплыть больше " + 10 + "м.");
         } else {
             super.swim(length);
         }

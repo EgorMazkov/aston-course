@@ -36,22 +36,4 @@ public class Animal {
         countDog++;
         countAnimal++;
     }
-
-    public void getCountAnimal() {
-        System.out.println("Всего животных: " + countAnimal);
-    }
-
-    public void getCountCat() {
-        System.out.println("Всего котов: " + countCat);
-    }
-
-    public void getCountDog() {
-        System.out.println("Всего собак: " + countDog);
-    }
-
-    public void getInfoAnimals() {
-        System.out.println("Всего животных: " + countAnimal);
-        System.out.println("Всего котов: " + countCat);
-        System.out.println("Всего собак: " + countDog);
-    }
 }

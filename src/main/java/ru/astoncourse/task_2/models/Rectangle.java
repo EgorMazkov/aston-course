@@ -25,17 +25,7 @@ public class Rectangle implements Shape {
         return lengthRectangle * widthRectangle;
     }
 
-    @Override
-    public String getBorderColor() {
-        return borderColor;
-    }
-
-    @Override
-    public String getFillColor() {
-        return fillColor;
-    }
-
     public void info() {
-        System.out.println(getPerimeter() + ", " + getArea() + ", " + getBorderColor() + ", " + getFillColor());
+        System.out.println(getPerimeter() + ", " + getArea() + ", " + fillColor + ", " + borderColor);
     }
 }

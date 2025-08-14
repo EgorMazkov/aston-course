@@ -13,8 +13,7 @@ public class Main {
         runAndSwimAnimals();
         eatsCat();
         eatsManyCats();
-        animal.getInfoAnimals();
-        bowl.refillTheBowlWithFood(100);
+        bowl.refillTheBowlWithFood(120);
     }
 
     private static void eatsManyCats() {
@@ -22,9 +21,9 @@ public class Main {
         for (int i = 0; i < massCats.length; i++) {
             massCats[i] = new Cat("Петрович-"+ i);
         }
-        for (Cat massCat : massCats) {
-            massCat.eats(30);
-            massCat.info();
+        for (int i = 0; i < massCats.length; i++) {
+            massCats[i].eats(30);
+            massCats[i].info();
         }
     }
 

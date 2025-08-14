@@ -3,7 +3,6 @@ package ru.astoncourse.task_1.animals;
 import ru.astoncourse.task_1.Main;
 
 public class Cat extends Animal {
-    private static int maxRun = 200;
     private boolean satiety = false;
 
     public Cat(String name) {
@@ -13,8 +12,8 @@ public class Cat extends Animal {
 
     @Override
     public void run(int length) {
-        if (length > maxRun) {
-            System.out.println(name + " не может пробежать больше " + maxRun + "м.");
+        if (length > 200) {
+            System.out.println(name + " не может пробежать больше " + 200 + "м.");
         } else {
             super.run(length);
         }
