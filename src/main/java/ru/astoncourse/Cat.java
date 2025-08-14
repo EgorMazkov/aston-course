@@ -1,0 +1,39 @@
+package ru.astoncourse;
+
+public class Cat extends Animal {
+    private static int maxRun = 200;
+    private boolean satiety = false;
+
+    public Cat(String name) {
+        super(name);
+        setCountCat();
+    }
+
+    @Override
+    public void run(int length) {
+        if (length > maxRun) {
+            System.out.println(name + " не может пробежать больше " + maxRun + "м.");
+        } else {
+            super.run(length);
+        }
+    }
+
+    @Override
+    public void swim(int length) {
+        System.out.println(name + " не умеет плавать.");
+    }
+
+    public void eats(int count) {
+        if (Main.bowl.eats(count)) {
+            System.out.println(name + " поел корма");
+            satiety = true;
+        } else {
+            System.out.println("Недостаточно корма в миске");
+        }
+    }
+
+    public void info() {
+        System.out.println("Кличка: " + name +
+                "\nСытость: " + satiety);
+    }
+}
