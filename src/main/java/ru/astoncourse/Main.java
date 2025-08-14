@@ -1,17 +1,58 @@
 package ru.astoncourse;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static Bowl bowl = new Bowl();
+    private static final Animal animal = new Animal();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    public static void main(String[] args) {
+
+        runAndSwimAnimals();
+        eatsCat();
+        eatsManyCats();
+        animal.getInfoAnimals();
+        bowl.refillTheBowlWithFood(100);
+    }
+
+    private static void eatsManyCats() {
+        Cat[] massCats = new Cat[10];
+        for (int i = 0; i < massCats.length; i++) {
+            massCats[i] = new Cat("Петрович-"+ i);
         }
+        for (Cat massCat : massCats) {
+            massCat.eats(30);
+            massCat.info();
+        }
+    }
+
+    private static void eatsCat() {
+        Cat cat = new Cat("Петрович");
+        cat.eats(15);
+        cat.info();
+
+        bowl.refillTheBowlWithFood(100);
+        cat.eats(15);
+        cat.info();
+    }
+
+    private static void runAndSwimAnimals() {
+        Cat cat = new Cat("Лиза");
+        Dog dog = new Dog("Боря");
+
+        cat.run(0);
+        dog.run(0);
+
+        cat.run(-100);
+        dog.run(-100);
+
+        cat.run(200);
+        dog.run(500);
+
+        cat.run(300);
+        dog.run(600);
+
+        cat.swim(100);
+        dog.swim(10);
+
+        dog.swim(20);
     }
 }
