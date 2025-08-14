@@ -1,4 +1,4 @@
-package ru.astoncourse;
+package ru.astoncourse.task_1;
 
 public class Bowl {
     private static int food = 0;

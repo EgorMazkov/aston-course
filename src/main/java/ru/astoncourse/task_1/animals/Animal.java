@@ -1,4 +1,4 @@
-package ru.astoncourse;
+package ru.astoncourse.task_1.animals;
 
 public class Animal {
     private static int countCat = 0;

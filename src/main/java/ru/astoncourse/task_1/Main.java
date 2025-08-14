@@ -1,4 +1,8 @@
-package ru.astoncourse;
+package ru.astoncourse.task_1;
+
+import ru.astoncourse.task_1.animals.Animal;
+import ru.astoncourse.task_1.animals.Cat;
+import ru.astoncourse.task_1.animals.Dog;
 
 public class Main {
     public static Bowl bowl = new Bowl();

@@ -1,4 +1,6 @@
-package ru.astoncourse;
+package ru.astoncourse.task_1.animals;
+
+import ru.astoncourse.task_1.Main;
 
 public class Cat extends Animal {
     private static int maxRun = 200;

@@ -1,4 +1,4 @@
-package ru.astoncourse;
+package ru.astoncourse.task_1.animals;
 
 public class Dog  extends Animal {
     private int maxRun = 500;
