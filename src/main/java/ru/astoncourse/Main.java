@@ -15,7 +15,5 @@ public class Main {
         productsArray[4] = new Product("Samsung Galaxy Tab S8", "05.03.2023",
                 "Samsung Electronics", "Korea", 850, true);
 
-        System.out.println(productsArray[4]);
-
     }
 }
