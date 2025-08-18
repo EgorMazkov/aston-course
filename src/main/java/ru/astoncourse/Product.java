@@ -1,8 +1,5 @@
 package ru.astoncourse;
 
-import lombok.Data;
-
-@Data
 public class Product {
     private String nameProduct;
     private String dateOfManufacture;

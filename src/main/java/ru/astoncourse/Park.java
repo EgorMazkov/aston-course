@@ -1,8 +1,5 @@
 package ru.astoncourse;
 
-import lombok.Data;
-
-@Data
 public class Park {
     private String parkName;
     private String location;
@@ -16,7 +13,6 @@ public class Park {
         this.closingPark = closingPark;
     }
 
-    @Data
     public class Attractions {
         private String nameAttraction;
         private String typeAttraction;
