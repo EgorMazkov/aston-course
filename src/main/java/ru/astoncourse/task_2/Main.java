@@ -21,7 +21,7 @@ public class Main {
         pd.add("Иванов", "+7-912-345-67-92");
         pd.add("Соколов", "+7-922-345-67-93");
 
-        System.out.println(pd.get("Кузнецов"));
+        System.out.println(pd.get("Мазков"));
 
 
     }

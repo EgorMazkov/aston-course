@@ -20,7 +20,7 @@ public class PhoneDirectory {
     public String get(String secondName) {
         String line = secondName + " : ";
         if (!secondNameAndPhone.containsKey(secondName)) {
-            return null;
+            return line + "У данной фамилии нет номера в справочнике";
         } else {
             List<String> list = secondNameAndPhone.get(secondName);
             for (int i = 0; i < list.size(); i++) {
