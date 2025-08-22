@@ -1,5 +1,7 @@
 package ru.astoncourse.task_2;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
     public static void main(String[] args) {
         PhoneDirectory pd = new PhoneDirectory();
@@ -22,6 +24,7 @@ public class Main {
         pd.add("Соколов", "+7-922-345-67-93");
 
         System.out.println(pd.get("Мазков"));
+        System.out.println(pd.get("Иванов"));
 
 
     }
