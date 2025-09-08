@@ -17,7 +17,7 @@ public class TestSeleniumMtsSite {
         driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        WebElement cookie = driver.findElement(By.xpath(".//*[@id=\"cookie-agree\"]"));
+        WebElement cookie = driver.findElement(By.xpath("//*[@id=\"cookie-agree\"]"));
         if (cookie.isEnabled()) {
             cookie.click();
         }
