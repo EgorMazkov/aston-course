@@ -41,7 +41,7 @@ public class HomePage {
         String idForm = driver.findElement(LocatorsHomePage.openFormLocator).getAttribute("id");
         if (!idForm.equals("pay-connection")) {
             driver.findElement(By.xpath("//*[@class=\"select__wrapper\"]")).click();
-            driver.findElement(By.xpath("//*[@class=\"select__list\"]/li[1]")).click(); // TODO доделать
+            driver.findElement(By.xpath("//*[@class=\"select__list\"]/li[1]")).click();
         }
         return this;
     }
