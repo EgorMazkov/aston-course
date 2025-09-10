@@ -34,13 +34,13 @@ public class TestSiteMtsUsePageObject {
     @Test
     void verifyPaymentLogosPresence() {
         for (int i = 0; i < 5; i++) {
-            Assertions.assertNotEquals(homePage.getLinkSrcLogo(i), null);
+            Assertions.assertNotEquals(null, homePage.getLinkSrcLogo(i));
         }
     }
 
     @Test
     void verifyMoreAboutServiceLink() {
-        Assertions.assertEquals(homePage.clickLinkAboutTheServiceLocator(), "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/");
+        Assertions.assertEquals("https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/", homePage.clickLinkAboutTheServiceLocator());
     }
 
     @Test
@@ -63,12 +63,12 @@ public class TestSiteMtsUsePageObject {
     void verifyPhoneServicesPaymentFlow() {
         homePage.fillFieldsAndVerifyContinueButton(LocatorsHomePage.numberPhone, LocatorsHomePage.sum, LocatorsHomePage.email);
         driver.switchTo().frame(driver.findElement(LocatorsHomePage.framePaymentLocator));
-        Assertions.assertEquals(LocatorsHomePage.sum, homePage.getTitleFrameText());
-        Assertions.assertEquals(LocatorsHomePage.sum, homePage.getSubmitButtonText());
+        Assertions.assertEquals(LocatorsHomePage.sum, homePage.getTitleFrameTextOrSubmitButtonText(0));
+        Assertions.assertEquals(LocatorsHomePage.sum, homePage.getTitleFrameTextOrSubmitButtonText(9));
         Assertions.assertEquals("375" + LocatorsHomePage.numberPhone, homePage.getNumberPhoneText());
-        Assertions.assertEquals(true, homePage.checkDisabledDinamicLogoCards());
-        Assertions.assertEquals(true, homePage.checkDisabledStatLogoCards());
-        Assertions.assertEquals(true, homePage.validateEmptyCardInputFieldTexts());
+        Assertions.assertTrue(homePage.checkDisabledDynamicLogoCards());
+        Assertions.assertTrue(homePage.checkDisabledStatLogoCards());
+        Assertions.assertTrue(homePage.validateEmptyCardInputFieldTexts());
     }
 
     @AfterEach

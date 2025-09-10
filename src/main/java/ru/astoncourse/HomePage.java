@@ -46,48 +46,48 @@ public class HomePage {
         return this;
     }
 
-    private HomePage enterNumberPhone(String number) {
+    private void enterNumberPhone(String number) {
         driver.findElement(LocatorsHomePage.enterNumberPhoneLocator).sendKeys(number);
-        return this;
     }
 
-    private HomePage enterSumPhone(String sum) {
+    private void enterSumPhone(String sum) {
         driver.findElement(LocatorsHomePage.enterSumLocator).sendKeys(sum);
-        return this;
     }
 
-    public HomePage enterEmail(String email) {
+    public void enterEmail(String email) {
         driver.findElement(LocatorsHomePage.enterEmailLocator).sendKeys(email);
-        return this;
     }
 
-    public HomePage fillFieldsAndVerifyContinueButton(String number, String sum) {
+    public void fillFieldsAndVerifyContinueButton(String number, String sum) {
         verifyFormCommunicationServices();
         enterNumberPhone(number);
         enterSumPhone(sum);
         driver.findElement(LocatorsHomePage.buttonResumeLocator).click();
-        return this;
     }
 
-    public HomePage fillFieldsAndVerifyContinueButton(String number, String sum, String email) {
+    public void fillFieldsAndVerifyContinueButton(String number, String sum, String email) {
         verifyFormCommunicationServices();
         enterNumberPhone(number);
         enterSumPhone(sum);
         enterEmail(email);
         driver.findElement(LocatorsHomePage.buttonResumeLocator).click();
-        return this;
     }
 
-    public String getTitleFrameText() {
+    public String getTitleFrameTextOrSubmitButtonText(int index) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(driver -> {
-            String text = driver.findElement(LocatorsHomePage.frameSumLocator).getText().trim();
-            return !text.isEmpty();
+                String text = driver.findElement(LocatorsHomePage.frameSumLocator).getText().trim();
+                return !text.isEmpty();
         });
-        String sum = driver.findElement(LocatorsHomePage.frameSumLocator).getText();
+        String sum = "";
+        if (index == 0) {
+            sum = driver.findElement(LocatorsHomePage.frameSumLocator).getText();
+        } else {
+            sum = driver.findElement(LocatorsHomePage.frameButtonSumLocator).getText();
+        }
         char[] lines = sum.toCharArray();
         sum = "";
-        for (int i = 0; i < lines.length; i++) {
+        for (int i = index; i < lines.length; i++) {
             if (lines[i] == '.' && lines[i + 1] == '0' && lines[i + 2] == '0') {
                 break;
             }
@@ -152,7 +152,7 @@ public class HomePage {
         return false;
     }
 
-    public boolean checkDisabledDinamicLogoCards() {
+    public boolean checkDisabledDynamicLogoCards() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         if (wait.until(ExpectedConditions.visibilityOfElementLocated(LocatorsHomePage.frameLogoMaestroLocator)).isDisplayed()) {
             wait.until(ExpectedConditions.visibilityOfElementLocated(LocatorsHomePage.frameLogoMirLocator));
