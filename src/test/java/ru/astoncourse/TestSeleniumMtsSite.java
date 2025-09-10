@@ -36,8 +36,7 @@ public class TestSeleniumMtsSite {
         String[] listNameAlt = {"Visa", "Verified By Visa", "MasterCard", "MasterCard Secure Code", "Белкарт"};
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         for (int i = 0; i < listNameAlt.length; i++) {
-            String srcLogoNotNull = driver.findElement(By.xpath("//img[@alt=\"" + listNameAlt[i] + "\"]")).getAttribute("src");
-            Assertions.assertNotEquals(srcLogoNotNull, null);
+            Assertions.assertTrue(driver.findElement(By.xpath("//img[@alt=\"" + listNameAlt[i] + "\"]")).isDisplayed());
         }
     }
 
@@ -47,7 +46,7 @@ public class TestSeleniumMtsSite {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.findElement(By.xpath("//*[@class=\"pay__wrapper\"]/a")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        Assertions.assertEquals(driver.getCurrentUrl(), "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/");
+        Assertions.assertEquals("https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/", driver.getCurrentUrl());
     }
 
     @Test
@@ -57,14 +56,12 @@ public class TestSeleniumMtsSite {
         if (!idForm.equals("pay-connection")) {
             driver.findElement(By.xpath("//*[@class=\"select__header\"]")).click();
             driver.findElement(By.xpath("//*[@class=\"select__list\"]/li[1]")).click();
-
         }
         driver.findElement(By.xpath("//*[@id=\"connection-phone\"]")).sendKeys("297777777");
         driver.findElement(By.xpath("//*[@id=\"connection-sum\"]")).sendKeys("10");
         driver.findElement(By.xpath("//*[@id=\"pay-connection\"]/button")).click();
-        Assertions.assertEquals(driver.findElement(By.xpath("//*[@class=\"bepaid-iframe\"]")).isEnabled(), true);
+        Assertions.assertTrue(driver.findElement(By.xpath("//*[@class=\"bepaid-iframe\"]")).isEnabled());
         driver.navigate().refresh();
-
     }
 
     @AfterAll
