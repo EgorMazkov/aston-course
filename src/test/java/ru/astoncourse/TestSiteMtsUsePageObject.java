@@ -1,10 +1,7 @@
 package ru.astoncourse;
 
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -26,24 +23,28 @@ public class TestSiteMtsUsePageObject {
     }
 
     @Test
+    @DisplayName("Проверка названия блока")
     void verifyNameBlock() {
         String nameBlock = "Онлайн пополнение без комиссии";
         Assertions.assertEquals(nameBlock, homePage.getNameBlockLocator());
     }
 
     @Test
+    @DisplayName("Проверка отображения логотипов платежных систем ")
     void verifyPaymentLogosPresence() {
         for (int i = 0; i < 5; i++) {
-            Assertions.assertNotEquals(null, homePage.getLinkSrcLogo(i));
+            Assertions.assertTrue(homePage.getLinkSrcLogo(i));
         }
     }
 
     @Test
+    @DisplayName("Проверка работы ссылки \"Подробнее о сервисе\"")
     void verifyMoreAboutServiceLink() {
         Assertions.assertEquals("https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/", homePage.clickLinkAboutTheServiceLocator());
     }
 
     @Test
+    @DisplayName("Заполнение блока оплаты и переход на frame оплаты")
     void FillingOutTheCommunicationServiceForm() {
         // неиспользовано необязательное поле Email
 //        homePage.fillFieldsAndVerifyContinueButton(LocatorsHomePage.numberPhone, LocatorsHomePage.sum);
@@ -52,14 +53,16 @@ public class TestSiteMtsUsePageObject {
     }
 
     @Test
+    @DisplayName("Проверка надписей в незаполненых полях")
     void checkLabelsInEmptyFieldsForPaymentMethods() {
-        Assertions.assertEquals(true, homePage.checkLabelCommunicationServices());
-        Assertions.assertEquals(true, homePage.checkLabelInternetHome());
-        Assertions.assertEquals(true, homePage.checkLabelInstalment());
-        Assertions.assertEquals(true, homePage.checkLabelArrears());
+        Assertions.assertTrue(homePage.checkLabelCommunicationServices());
+        Assertions.assertTrue(homePage.checkLabelInternetHome());
+        Assertions.assertTrue(homePage.checkLabelInstalment());
+        Assertions.assertTrue(homePage.checkLabelArrears());
     }
 
     @Test
+    @DisplayName("Блок оплаты")
     void verifyPhoneServicesPaymentFlow() {
         homePage.fillFieldsAndVerifyContinueButton(LocatorsHomePage.numberPhone, LocatorsHomePage.sum, LocatorsHomePage.email);
         driver.switchTo().frame(driver.findElement(LocatorsHomePage.framePaymentLocator));
